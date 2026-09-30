@@ -1,0 +1,839 @@
+## 1. What is HTML?
+HTML (**HyperText Markup Language**) is the standard markup language used to structure web pages.
+HTML uses **elements/tags** to tell the browser what each piece of content represents.
+HTML is **not a programming language**; it describes the structure of a page.
+
+### Basic Example
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>This is my first webpage.</p>
+</body>
+</html>
+```
+
+---
+
+# 2. Basic HTML Document Structure
+
+| Tag               | Purpose                                        | Example                                    |
+| ----------------- | ---------------------------------------------- | ------------------------------------------ |
+| `<!DOCTYPE html>` | Tells the browser the document uses HTML5.     | `<!DOCTYPE html>`                          |
+| `<html>`          | Root element containing the whole page.        | `<html> ... </html>`                       |
+| `<head>`          | Contains metadata, title, CSS links, etc.      | `<head> ... </head>`                       |
+| `<title>`         | Text shown in the browser tab.                 | `<title>Home</title>`                      |
+| `<body>`          | Contains visible page content.                 | `<body> ... </body>`                       |
+| `<meta>`          | Provides metadata such as charset or viewport. | `<meta charset="UTF-8">`                   |
+| `<link>`          | Connects external resources, commonly CSS.     | `<link rel="stylesheet" href="style.css">` |
+| `<style>`         | Contains internal CSS.                         | `<style>p { color: red; }</style>`         |
+| `<script>`        | Adds or loads JavaScript.                      | `<script src="app.js"></script>`           |
+
+---
+
+# 3. Headings and Text
+
+| Tag              | What it does                                                     | Example                                               |
+| ---------------- | ---------------------------------------------------------------- | ----------------------------------------------------- |
+| `<h1>` to `<h6>` | Headings from most important/largest to least important/smaller. | `<h1>Main Heading</h1>`                               |
+| `<p>`            | Paragraph.                                                       | `<p>Hello world.</p>`                                 |
+| `<br>`           | Line break; no closing tag.                                      | `Hello<br>World`                                      |
+| `<hr>`           | Thematic break/horizontal rule.                                  | `<hr>`                                                |
+| `<strong>`       | Strong importance; normally bold.                                | `<strong>Important</strong>`                          |
+| `<b>`            | Stylistically bold text without implying importance.             | `<b>Bold</b>`                                         |
+| `<em>`           | Emphasized text; normally italic.                                | `<em>Important</em>`                                  |
+| `<i>`            | Text in an alternate voice/mood or italic style.                 | `<i>Note</i>`                                         |
+| `<u>`            | Non-textual annotation/underline styling.                        | `<u>Underline</u>`                                    |
+| `<mark>`         | Highlights text.                                                 | `<mark>Highlighted</mark>`                            |
+| `<small>`        | Smaller side/comment text.                                       | `<small>Terms apply</small>`                          |
+| `<del>`          | Deleted content.                                                 | `<del>$50</del>`                                      |
+| `<ins>`          | Inserted content.                                                | `<ins>$40</ins>`                                      |
+| `<sub>`          | Subscript.                                                       | `H<sub>2</sub>O`                                      |
+| `<sup>`          | Superscript.                                                     | `x<sup>2</sup>`                                       |
+| `<s>`            | Text no longer accurate/relevant.                                | `<s>Old price</s>`                                    |
+| `<abbr>`         | Abbreviation with optional full form.                            | `<abbr title="HyperText Markup Language">HTML</abbr>` |
+| `<code>`         | Inline code.                                                     | `<code>print()</code>`                                |
+| `<pre>`          | Preformatted text; preserves spaces/line breaks.                 | `<pre>Hello World</pre>`                              |
+| `<blockquote>`   | Long quotation from another source.                              | `<blockquote>Quote...</blockquote>`                   |
+| `<q>`            | Short inline quotation.                                          | `<q>Hello</q>`                                        |
+
+---
+
+# 4. Links / Anchor Tag
+
+The `<a>` tag creates hyperlinks.
+
+### Basic Link
+
+```html
+<a href="https://example.com">Visit Example</a>
+```
+
+### Open Link in New Tab
+
+```html
+<a href="https://example.com" target="_blank">Open</a>
+```
+
+### Link to Another Page
+
+```html
+<a href="about.html">About Us</a>
+```
+
+### Email Link
+
+```html
+<a href="mailto:abc@example.com">Email Us</a>
+```
+
+### Phone Link
+
+```html
+<a href="tel:+911234567890">Call Us</a>
+```
+
+### Link to a Section on the Same Page
+
+```html
+<a href="#contact">Contact</a>
+
+<h2 id="contact">Contact Section</h2>
+```
+
+---
+
+# 5. Images
+
+| Tag / Attribute | Purpose                                        | Example                                  |
+| --------------- | ---------------------------------------------- | ---------------------------------------- |
+| `<img>`         | Embeds an image; it is a void element.         | `<img src="photo.jpg" alt="A mountain">` |
+| `src`           | Image file URL/path.                           | `src="photo.jpg"`                        |
+| `alt`           | Alternative text; important for accessibility. | `alt="Mountain landscape"`               |
+| `width`         | Rendered width.                                | `width="300"`                            |
+| `height`        | Rendered height.                               | `height="200"`                           |
+| `loading`       | Controls loading behavior.                     | `loading="lazy"`                         |
+
+### Example
+
+```html
+<img src="images/cat.jpg"
+     alt="White cat"
+     width="300"
+     height="200">
+```
+
+---
+
+# 6. Lists
+
+## Unordered List
+
+```html
+<ul>
+    <li>Apple</li>
+    <li>Banana</li>
+</ul>
+```
+
+## Ordered List
+
+```html
+<ol>
+    <li>Wake up</li>
+    <li>Study</li>
+</ol>
+```
+
+## Description List
+
+```html
+<dl>
+    <dt>HTML</dt>
+    <dd>Structures a webpage.</dd>
+
+    <dt>CSS</dt>
+    <dd>Styles a webpage.</dd>
+</dl>
+```
+
+### Important List Tags
+
+| Tag    | Purpose                          |
+| ------ | -------------------------------- |
+| `<ul>` | Unordered/bullet list.           |
+| `<ol>` | Ordered/numbered list.           |
+| `<li>` | List item.                       |
+| `<dl>` | Description list.                |
+| `<dt>` | Term/name in a description list. |
+| `<dd>` | Description/value of the term.   |
+
+---
+
+# 7. Tables
+
+### Basic Table
+
+```html
+<table>
+    <caption>Student Marks</caption>
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Marks</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Paylu</td>
+            <td>85</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+### Table Tags
+
+| Tag         | Purpose                             |
+| ----------- | ----------------------------------- |
+| `<table>`   | Creates a table.                    |
+| `<caption>` | Table title/caption.                |
+| `<thead>`   | Header section.                     |
+| `<tbody>`   | Main body of rows.                  |
+| `<tfoot>`   | Footer/summary rows.                |
+| `<tr>`      | Table row.                          |
+| `<th>`      | Header cell.                        |
+| `<td>`      | Data cell.                          |
+| `colspan`   | Makes a cell span multiple columns. |
+| `rowspan`   | Makes a cell span multiple rows.    |
+
+### Colspan
+
+```html
+<td colspan="2">Spans 2 columns</td>
+```
+
+### Rowspan
+
+```html
+<td rowspan="2">Spans 2 rows</td>
+```
+
+---
+
+# 8. Forms — Very Important for Interviews
+
+### Basic Form
+
+```html
+<form action="/submit" method="post">
+
+    <label for="name">Name:</label>
+    <input type="text"
+           id="name"
+           name="name"
+           placeholder="Enter name">
+
+    <label for="email">Email:</label>
+    <input type="email"
+           id="email"
+           name="email"
+           required>
+
+    <label for="password">Password:</label>
+    <input type="password"
+           id="password"
+           name="password">
+
+    <button type="submit">Submit</button>
+
+</form>
+```
+
+### Form Elements and Attributes
+
+| Element / Attribute | Purpose                                              | Example                                     |
+| ------------------- | ---------------------------------------------------- | ------------------------------------------- |
+| `<form>`            | Groups controls for user input/submission.           | `<form action="/login" method="post">`      |
+| `action`            | URL where form data is submitted.                    | `action="/submit"`                          |
+| `method`            | HTTP method, commonly GET or POST.                   | `method="post"`                             |
+| `<label>`           | Accessible label for a form control.                 | `<label for="email">Email</label>`          |
+| `<input>`           | Single-line/many types of user input.                | `<input type="text">`                       |
+| `type="text"`       | Normal text input.                                   | `<input type="text">`                       |
+| `type="email"`      | Email input.                                         | `<input type="email">`                      |
+| `type="password"`   | Password input.                                      | `<input type="password">`                   |
+| `type="number"`     | Numeric input.                                       | `<input type="number">`                     |
+| `type="date"`       | Date picker.                                         | `<input type="date">`                       |
+| `type="time"`       | Time input.                                          | `<input type="time">`                       |
+| `type="file"`       | File selection.                                      | `<input type="file">`                       |
+| `type="checkbox"`   | Multiple independent selections.                     | `<input type="checkbox">`                   |
+| `type="radio"`      | One choice from a group.                             | `<input type="radio" name="gender">`        |
+| `type="submit"`     | Submit button.                                       | `<input type="submit" value="Send">`        |
+| `type="reset"`      | Resets form controls.                                | `<input type="reset">`                      |
+| `type="hidden"`     | Hidden form value.                                   | `<input type="hidden" name="id" value="1">` |
+| `<textarea>`        | Multi-line text input.                               | `<textarea rows="4"></textarea>`            |
+| `<select>`          | Dropdown selection.                                  | `<select><option>India</option></select>`   |
+| `<option>`          | Option inside select.                                | `<option value="in">India</option>`         |
+| `<optgroup>`        | Groups dropdown options.                             | `<optgroup label="Asia">...</optgroup>`     |
+| `<button>`          | Clickable button.                                    | `<button type="submit">Send</button>`       |
+| `required`          | Makes input mandatory.                               | `<input required>`                          |
+| `placeholder`       | Shows a hint inside an empty field.                  | `placeholder="Enter name"`                  |
+| `value`             | Initial/submitted value.                             | `value="India"`                             |
+| `name`              | Name used when submitting form data.                 | `name="email"`                              |
+| `disabled`          | Disables a control.                                  | `<input disabled>`                          |
+| `readonly`          | Prevents editing while remaining usable/submittable. | `<input readonly>`                          |
+| `checked`           | Preselects checkbox/radio.                           | `<input type="checkbox" checked>`           |
+| `selected`          | Preselects an option.                                | `<option selected>India</option>`           |
+| `min / max`         | Sets numeric/date limits.                            | `<input type="number" min="1" max="10">`    |
+| `pattern`           | Validation pattern using regex.                      | `<input pattern="[A-Za-z]+">`               |
+
+---
+
+# 9. Semantic HTML5 Tags
+
+Semantic tags describe the meaning/role of content.
+
+They improve **accessibility, structure, and maintainability**.
+
+| Tag            | Purpose                                            |
+| -------------- | -------------------------------------------------- |
+| `<header>`     | Introductory content/header for a page or section. |
+| `<nav>`        | Major navigation links.                            |
+| `<main>`       | Main unique content of the document.               |
+| `<section>`    | Thematic section of content.                       |
+| `<article>`    | Self-contained content such as a post/article.     |
+| `<aside>`      | Related/secondary content, such as a sidebar.      |
+| `<footer>`     | Footer for a page or section.                      |
+| `<figure>`     | Self-contained media/content.                      |
+| `<figcaption>` | Caption for a figure.                              |
+| `<details>`    | Expandable disclosure widget.                      |
+| `<summary>`    | Visible heading for details.                       |
+| `<time>`       | Represents a date/time.                            |
+| `<address>`    | Contact information for a page/article.            |
+
+### Example
+
+```html
+<header>
+    Logo + title
+</header>
+
+<nav>
+    Home | About | Contact
+</nav>
+
+<main>
+
+    <article>
+        <h1>My Article</h1>
+        <p>Article content...</p>
+    </article>
+
+    <aside>
+        Related links
+    </aside>
+
+</main>
+
+<footer>
+    Copyright 2026
+</footer>
+```
+
+---
+
+# 10. Generic Containers
+
+## `<div>`
+
+A generic **block-level container**.
+
+Commonly used as a CSS or JavaScript hook.
+
+```html
+<div class="card">
+    <h2>Product</h2>
+    <p>Product description</p>
+</div>
+```
+
+## `<span>`
+
+A generic **inline container**.
+
+```html
+<p>
+    This is a
+    <span class="highlight">special</span>
+    word.
+</p>
+```
+
+### Difference
+
+```text
+<div>  → Block-level container
+<span> → Inline container
+```
+
+---
+
+# 11. Audio and Video
+
+## Audio
+
+```html
+<audio controls>
+    <source src="song.mp3" type="audio/mpeg">
+
+    Your browser does not support audio.
+</audio>
+```
+
+## Video
+
+```html
+<video controls width="500">
+
+    <source src="movie.mp4" type="video/mp4">
+
+    Your browser does not support video.
+
+</video>
+```
+
+## iframe
+
+```html
+<iframe
+    src="https://example.com"
+    title="Example">
+</iframe>
+```
+
+### Media Tags
+
+| Tag        | Purpose                               |
+| ---------- | ------------------------------------- |
+| `<audio>`  | Embeds audio.                         |
+| `<video>`  | Embeds video.                         |
+| `<source>` | Provides a media source/format.       |
+| `<track>`  | Adds timed text such as captions.     |
+| `<iframe>` | Embeds another browsing context/page. |
+
+---
+
+# 12. HTML Attributes
+
+Attributes provide additional information or behavior for an element.
+
+They are normally written inside the opening tag.
+
+### Syntax
+
+```html
+<tag attribute="value">
+    Content
+</tag>
+```
+
+### Example
+
+```html
+<a href="about.html"
+   class="link"
+   id="about">
+
+   About
+
+</a>
+```
+
+### Important Attributes
+
+| Attribute  | Purpose                                                           |
+| ---------- | ----------------------------------------------------------------- |
+| `id`       | Unique identifier for an element; useful for CSS, JS and anchors. |
+| `class`    | One or more reusable CSS/JS classes.                              |
+| `style`    | Inline CSS styles.                                                |
+| `title`    | Additional advisory information, often shown as a tooltip.        |
+| `lang`     | Language of an element/document.                                  |
+| `dir`      | Text direction: `ltr` or `rtl`.                                   |
+| `hidden`   | Hides an element.                                                 |
+| `tabindex` | Controls keyboard focus order/focusability.                       |
+| `data-*`   | Stores custom data on an element.                                 |
+| `aria-*`   | Accessibility-related attributes for assistive technologies.      |
+
+### Example
+
+```html
+<p
+    id="intro"
+    class="text large"
+    title="Introduction">
+
+    Hello
+
+</p>
+```
+
+### Custom Data Attribute
+
+```html
+<div data-user-id="123">
+    User
+</div>
+```
+
+---
+
+# 13. HTML Entities / Special Characters
+
+| Entity     | Displays as        | Use                                |
+| ---------- | ------------------ | ---------------------------------- |
+| `&lt;`     | `<`                | Less-than sign                     |
+| `&gt;`     | `>`                | Greater-than sign                  |
+| `&amp;`    | `&`                | Ampersand                          |
+| `&quot;`   | `"`                | Double quote                       |
+| `&apos;`   | `'`                | Apostrophe                         |
+| `&nbsp;`   | Non-breaking space | Space that does not collapse/break |
+| `&copy;`   | ©                  | Copyright symbol                   |
+| `&reg;`    | ®                  | Registered trademark               |
+| `&trade;`  | ™                  | Trademark                          |
+| `&hearts;` | ♥                  | Heart symbol                       |
+
+### Example
+
+```html
+<p>
+    &copy; 2026 My Website
+</p>
+```
+
+---
+
+# 14. Comments
+
+HTML comments are ignored by the browser.
+
+```html
+<!-- This is an HTML comment -->
+
+<p>Hello</p>
+
+<!--
+    This is a
+    multi-line comment
+-->
+```
+
+Comments are useful for notes/documentation.
+
+**Important:** Do not put passwords or secrets in comments because source code can be viewed.
+
+---
+
+# 15. Responsive / Mobile Setup
+
+Use this inside `<head>`:
+
+```html
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+```
+
+This viewport setting helps pages render appropriately on mobile devices.
+
+---
+
+# 16. External CSS and JavaScript
+
+## External CSS
+
+```html
+<link
+    rel="stylesheet"
+    href="style.css">
+```
+
+## Internal CSS
+
+```html
+<style>
+
+    body {
+        font-family: Arial;
+    }
+
+</style>
+```
+
+## External JavaScript
+
+```html
+<script src="script.js"></script>
+```
+
+## JavaScript Directly in HTML
+
+```html
+<script>
+
+    console.log("Hello");
+
+</script>
+```
+
+---
+
+# 17. Useful HTML5 Elements
+
+| Tag          | Purpose                                               |
+| ------------ | ----------------------------------------------------- |
+| `<canvas>`   | Drawing surface controlled mainly with JavaScript.    |
+| `<svg>`      | Embeds scalable vector graphics markup.               |
+| `<picture>`  | Provides responsive image sources.                    |
+| `<map>`      | Defines an image map.                                 |
+| `<area>`     | Clickable area within an image map.                   |
+| `<dialog>`   | Represents a dialog/modal-like element.               |
+| `<meter>`    | Displays a scalar measurement within a known range.   |
+| `<progress>` | Displays task completion progress.                    |
+| `<output>`   | Represents a calculation/result.                      |
+| `<datalist>` | Provides suggested options for an input.              |
+| `<template>` | Stores HTML that is not rendered immediately.         |
+| `<noscript>` | Content shown when scripting is unavailable/disabled. |
+| `<wbr>`      | Optional line-break opportunity.                      |
+| `<bdi>`      | Isolates text direction.                              |
+| `<bdo>`      | Overrides text direction.                             |
+| `<ruby>`     | Ruby annotation container.                            |
+| `<rt>`       | Ruby annotation text.                                 |
+| `<rp>`       | Fallback parentheses for ruby annotations.            |
+
+---
+
+# 18. Commonly Used Global Attributes
+
+| Attribute         | Example                  | Meaning                          |
+| ----------------- | ------------------------ | -------------------------------- |
+| `id`              | `id="header"`            | Unique element identifier.       |
+| `class`           | `class="btn primary"`    | Reusable class names.            |
+| `style`           | `style="color:red"`      | Inline CSS.                      |
+| `title`           | `title="More info"`      | Extra advisory text.             |
+| `hidden`          | `hidden`                 | Hides the element.               |
+| `lang`            | `lang="en"`              | Language.                        |
+| `dir`             | `dir="rtl"`              | Text direction.                  |
+| `contenteditable` | `contenteditable="true"` | Allows editing in the browser.   |
+| `draggable`       | `draggable="true"`       | Makes an element draggable.      |
+| `spellcheck`      | `spellcheck="true"`      | Enables/disables spell checking. |
+| `tabindex`        | `tabindex="0"`           | Keyboard focus behavior.         |
+| `data-*`          | `data-id="10"`           | Custom data attribute.           |
+
+---
+
+# 19. Void Elements — No Closing Tag
+
+These elements do not have normal closing tags.
+
+```html
+<area>
+
+<base>
+
+<br>
+
+<col>
+
+<embed>
+
+<hr>
+
+<img>
+
+<input>
+
+<link>
+
+<meta>
+
+<param>
+
+<source>
+
+<track>
+
+<wbr>
+```
+
+### Example
+
+```html
+<img src="photo.jpg" alt="Photo">
+
+<br>
+
+<hr>
+
+<input type="text">
+```
+
+You don't write:
+
+```html
+</img>
+</input>
+</br>
+```
+
+---
+
+# 20. Deprecated / Avoid in New HTML
+
+Older HTML contains tags that are obsolete or discouraged in modern HTML.
+
+Use CSS and semantic HTML instead.
+
+| Old Tag              | Modern Approach                                            |
+| -------------------- | ---------------------------------------------------------- |
+| `<font>`             | Use CSS for font family, size and color.                   |
+| `<center>`           | Use CSS `text-align`/layout.                               |
+| `<big>`              | Use CSS `font-size`.                                       |
+| `<strike>`           | Use `<s>` or `<del>` depending on meaning.                 |
+| `<tt>`               | Use `<code>` or CSS.                                       |
+| `<marquee>`          | Use CSS animations if a moving effect is genuinely needed. |
+| `<frameset>/<frame>` | Use modern layout and, where appropriate, `<iframe>`.      |
+
+---
+
+# 21. Mini Project — Complete HTML Page
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Student Profile</h1>
+
+    </header>
+
+
+    <nav>
+
+        <a href="#about">About</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <main>
+
+        <section id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                Hello! I am learning
+                <strong>HTML</strong>.
+            </p>
+
+            <img
+                src="profile.jpg"
+                alt="Student profile photo"
+                width="200">
+
+        </section>
+
+
+        <section id="skills">
+
+            <h2>Skills</h2>
+
+            <ul>
+
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Java</li>
+
+            </ul>
+
+        </section>
+
+
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+            <form>
+
+                <label for="name">
+                    Name:
+                </label>
+
+                <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required>
+
+
+                <label for="email">
+                    Email:
+                </label>
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required>
+
+
+                <button type="submit">
+                    Send
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 Student Profile
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+```
+
+---
+
